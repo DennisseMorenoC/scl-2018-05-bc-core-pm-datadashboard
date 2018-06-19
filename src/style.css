@@ -1,0 +1,116 @@
+*{
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
+}
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0px auto;
+}
+.row:before, .row:after {
+    content: " ";
+    display: table;
+}
+.row {  
+    clear: both;
+}  
+[class*="col-"] { 
+    float: left;
+    padding: 0px;
+}
+.col-1 {
+  width: 8.333333333%;
+}
+.col-2 {
+  width: 16.666666667%;
+}
+.col-3 {
+  width: 25%;
+}
+.col-4 {
+  width: 33.333333333%;
+}
+.col-5 {
+  width: 41.666666667%;
+}
+.col-6 {
+  width: 50%;
+}
+.col-7 {
+  width: 58.333333333%;
+}
+.col-8 {
+  width: 66.666666667%;
+}
+.col-9 {
+  width: 75%;
+}
+.col-10 {
+  width: 83.333333333%;
+}
+.col-11 {
+  width: 91.666666667%;
+}
+.col-12{
+  width: 100%;
+}
+[class*="col-"] 
+@media all and (max-width: 700px){ 
+  [class*="col-"] {
+    width: 100%
+  }
+}
+
+.logo{
+    width: 80%;
+    padding: 1.5% 0;
+}
+h1{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    font-size: 26px;
+    background-color: #FFE521;
+    padding: 1.5% 30px;
+}
+.usuario{
+    padding: 24px 10px;
+    background-color: #fafafa;
+    width: 100%;
+    display: flex;
+    border-color: 1px solid #F2F2F2;
+}
+.valeRedonda{
+    width:40px;
+    height:40px;
+    border-radius:20px;
+    position: relative;
+    margin-left: 10px;
+
+}
+.datos{
+    font-family: 'Open Sans', sans-serif;
+    position: relative;
+    margin-left: 15px;
+    font-weight: 100;S
+}
+h3{
+    font-size: 16px;
+}
+p{
+    font-size: 14px;
+    display: block;
+}
+.btn-group-vertical{
+    width: 100%;
+    position: relative;
+}
+.btn{
+    display: inline-block;
+    border-color: 1px solid #E0E0E0;
+    padding: 10px;
+    font-size: 20px;
+    line-height: 1.5;
+    text-align: center;
+    background-color: white;
+}
