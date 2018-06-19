@@ -21,7 +21,5 @@
   },
   "devDependencies": {
     "eslint-config-google": "^0.9.1"
-  },
-
-  “eslintIgnore”: [“test/fixtures.js”]
+  }
 }
