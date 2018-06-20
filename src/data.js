@@ -5,8 +5,8 @@
 
 
 
-const btn =  document.getElementById("boton");
-const container =  document.getElementById("root");
+const btn =  document.getElementById("dropdown2018");
+const container =  document.getElementById("");
 const userJson = "../data/cohorts/lim-2018-03-pre-core-pw/users.json";
 
 
@@ -20,12 +20,12 @@ fetch(userJson)
 const renderUsers = data =>{
     btn.addEventListener("click", () =>{
         const render = data.forEach(element =>{
-            return container.innerHTML += (`<p>${element.name}</p>` + `<p>${element.timezone}</p>`)
+            return container.innerHTML += (`<p>${element.signupCohort}</p>`)
         })
         return render;
     })
 }
-
+/*
 const cursos = document.getElementById("cohorts");
 const containerDos= document.getElementById("rootDos");
 const cohortJson= "../data/cohorts.json";
@@ -44,4 +44,4 @@ const renderCohorts = data =>{
         })
         return render;
     })
-}
+}*/
