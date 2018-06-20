@@ -126,3 +126,13 @@ p{
   border: 0px transparent;
   box-shadow: none;
 }
+.inferiorIzquierdo{
+  display: inline;
+}
+.inferiorDerecho{
+  display: inline;
+}
+.menuDropdown{
+  width: 100%;
+  position: relative;
+}
