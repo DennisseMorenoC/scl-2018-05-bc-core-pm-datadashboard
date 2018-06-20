@@ -7,7 +7,7 @@
 
 const btn =  document.getElementById("boton");
 const container =  document.getElementById("root");
-const userJson = "data/cohorts/lim-2018-03-pre-core-pw/users.json";
+const userJson = "../data/cohorts/lim-2018-03-pre-core-pw/users.json";
 
 fetch(userJson)
 .then(response => response.json())
