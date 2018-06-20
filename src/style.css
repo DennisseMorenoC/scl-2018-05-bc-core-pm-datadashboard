@@ -75,16 +75,16 @@
 }
 .usuario{
     padding: 24px 10px;
-
+    padding-bottom: 10px;
     background-color: #fafafa;
     width: 100%;
     display: flex;
     border: 1px solid rgb(231, 231, 231);
 }
 .valeRedonda{
-    width:50px;
-    height:50px;
-    border-radius:25px;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
     position: relative;
     margin-left: 30px;
 }
@@ -105,11 +105,22 @@ p{
     position: relative;
 }
 .btn{
+    font-family: 'Open Sans', sans-serif;
     display: inline-block;
-    border-color: 1px solid #E0E0E0;
-    padding: 10px;
-    font-size: 20px;
-    line-height: 1.5;
+    border: transparent;
+    border-radius: 0px;
+    padding: 15px;
+    font-size: 16px;
     text-align: center;
     background-color: white;
+    color: black;
+    font-weight: lighter;
+}
+.btn:hover{
+  background-color: rgb(231, 231, 231);
+  color: black;
+}
+.btn:visited{
+  background-color: #FFE521;
+  
 }
