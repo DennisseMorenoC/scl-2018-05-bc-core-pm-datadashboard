@@ -126,13 +126,8 @@ p{
   border: 0px transparent;
   box-shadow: none;
 }
-.inferiorIzquierdo{
-  display: inline;
+.menuSuperior{
+  display: inline-flex;
 }
-.inferiorDerecho{
-  display: inline;
-}
-.menuDropdown{
-  width: 100%;
-  position: relative;
-}
+
+
