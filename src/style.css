@@ -128,6 +128,29 @@ p{
 }
 .menuSuperior{
   display: inline-flex;
+  padding: 2% 2%;
 }
-
+.btn2{
+  width: 250px;
+  padding: 3% 2%;
+  background-color: #FFE521;
+  color: black;
+  border: transparent;
+}
+.btn3{
+  padding: 3% 2%;
+  width: 250px;
+  margin-left: 15px;
+  background-color: #FFE521;
+  color: black;
+  border: transparent;
+}
+.btn4{
+  padding: 3% 2%;
+  width: 250px;
+  margin-left: 15px;
+  background-color: #FFE521;
+  color: black;
+  border: transparent;
+}
 
