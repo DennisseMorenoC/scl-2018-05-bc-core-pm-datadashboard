@@ -29,6 +29,7 @@ describe('data', () => {
 
       processed.forEach(user => {
         assert.ok(user.hasOwnProperty('stats'));
+        assert.isAtLeast(user.stats.percent,0);
         assert.isNumber(user.stats.percent);
         assert.isObject(user.stats.exercises);
         assert.isObject(user.stats.quizzes);
@@ -75,9 +76,22 @@ describe('data', () => {
   });
 
   describe('sortUsers(users, orderBy, orderDirection)', () => {
-
-    it('debería retornar arreglo de usuarios ordenado por nombre ASC');
-    it('debería retornar arreglo de usuarios ordenado por nombre DESC');
+    const cohort = fixtures.cohorts.find(item => item.id === 'lim-2018-03-pre-core-pw');
+    const courses = Object.keys(cohort.coursesIndex);
+    const { users, progress } = fixtures;
+    const processed = computeUsersStats(users, progress, courses);
+    it('debería retornar arreglo de usuarios ordenado por nombre ASC', ()=>{
+      const soredtUsers = sortUsers(processed, "name", "ASC");
+      for(let i = 1; i < soredtUsers.length; ++i){
+        assert.isAtMost(soredtUsers(0).name.localeCompare(soredtUsers[1].name), 0);
+      }
+    });
+    it('debería retornar arreglo de usuarios ordenado por nombre DESC', ()=>{
+      const soredtUsers = sortUsers(processed, "name", "ASC");
+      for(let i = 1; i < soredtUsers.length; ++i){
+        assert.isAtLeast(soredtUsers(0).name.localeCompare(soredtUsers[1].name), 0);
+      }
+    });
     it('debería retornar arreglo de usuarios ordenado por porcentaje general ASC');
     it('debería retornar arreglo de usuarios ordenado por porcentaje general DESC');
     it('debería retornar arreglo de usuarios ordenado por ejercicios completados ASC');
