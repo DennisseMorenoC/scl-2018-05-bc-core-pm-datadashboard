@@ -63,7 +63,7 @@
   }
 }
 .navbar{
-  background-color: #FFE521;
+  background-color: rgb(255, 229, 33);
   font-family: 'Open Sans', sans-serif;
   font-size: 2px;
 }
@@ -122,35 +122,55 @@ p{
 }
 .btn:focus{
   font-weight: inherit;
-  background-color: #FFE521;
+  background-color: rgb(255, 229, 33);
   border: 0px transparent;
   box-shadow: none;
 }
 .menuSuperior{
   display: inline-flex;
-  padding: 2% 2%;
+  padding: 2% 0;
+  padding-left: 6.5%;
 }
 .btn2{
+  font-family: 'Open Sans', sans-serif;
   width: 250px;
   padding: 3% 2%;
-  background-color: #FFE521;
+  background-color: rgb(255, 229, 33);
   color: black;
   border: transparent;
+}
+.btn2:hover{
+  background-color: rgb(255, 0, 157);
+  color: black;
+}
+.btn2:checked{
+  box-shadow: none;
+  background-color: rgb(255, 0, 157);
 }
 .btn3{
+  font-family: 'Open Sans', sans-serif;
   padding: 3% 2%;
   width: 250px;
   margin-left: 15px;
-  background-color: #FFE521;
+  background-color: rgb(255, 229, 33);
   color: black;
   border: transparent;
 }
+.btn3:hover{
+  background-color: rgb(255, 0, 157);
+  color: black;
+}
 .btn4{
+  font-family: 'Open Sans', sans-serif;
   padding: 3% 2%;
   width: 250px;
   margin-left: 15px;
-  background-color: #FFE521;
+  background-color: rgb(255, 229, 33);
   color: black;
   border: transparent;
+}
+.btn4:hover{
+  background-color: rgb(255, 0, 157);
+  color: black;
 }
 
