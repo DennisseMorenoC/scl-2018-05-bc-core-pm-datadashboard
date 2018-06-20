@@ -8,6 +8,11 @@
     max-width: 1200px;
     margin: 0px auto;
 }
+.container2{
+  width: 100%;
+  max-width: 1200px;
+  margin: 0px auto;
+}
 .row:before, .row:after {
     content: " ";
     display: table;
@@ -61,17 +66,16 @@
     width: 100%
   }
 }
-
-.logo{
-    width: 80%;
-    padding: 1.5% 0;
+.navbar{
+  background-color: #FFE521;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 2px;
 }
-h1{
-    font-family: 'Open Sans', sans-serif;
-    font-weight: bold;
-    font-size: 26px;
-    background-color: #FFE521;
-    padding: 1.5% 30px;
+.logo{
+  width: 60%;
+  padding: 2% 0;
+  position: absolute;
+  margin-left: 30px;
 }
 .usuario{
     padding: 24px 10px;
@@ -81,18 +85,18 @@ h1{
     border-color: 1px solid #F2F2F2;
 }
 .valeRedonda{
-    width:40px;
-    height:40px;
-    border-radius:20px;
+    width:50px;
+    height:50px;
+    border-radius:25px;
     position: relative;
-    margin-left: 10px;
+    margin-left: 40px;
 
 }
 .datos{
     font-family: 'Open Sans', sans-serif;
     position: relative;
     margin-left: 15px;
-    font-weight: 100;S
+
 }
 h3{
     font-size: 16px;
