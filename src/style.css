@@ -182,4 +182,7 @@ p{
   font-weight: inherit;
   background-color: rgb(250, 250, 250);
 }
+.contenedorCambiante{
+  width: 100%;
+}
 
