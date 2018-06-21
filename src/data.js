@@ -45,3 +45,20 @@ const renderCohorts = data =>{
         return render;
     })
 }
+
+/*const cohort = cohortJson.find(item => item.id === 'lim-2018-03-pre-core-pw');
+const courses = Object.keys(cohortJson.coursesIndex);
+const { users, progress } = cohortJson;
+const processed = computeUsersStats(users, progress, courses);*/
+
+const cohortFilter = cohortJson.filter(//Le pasamos cosas, esto para filtrar segun los parametros que le entregamos en la funcion
+    (elemento) =>{
+        return elemento.signupCohort == 'lim-2018-03-pre-core-pw';
+        console.log(signupCohort)
+    }
+);
+/*
+
+for(i = 0; i < cohortJson.length; i++){
+
+}*/
