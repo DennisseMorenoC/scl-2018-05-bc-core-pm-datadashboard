@@ -29,11 +29,10 @@ const renderUsers = data =>{
     })
 }
 
-
 //fetch para cohorts
 let cohorts = [];
-const cursos = document.getElementById("dropdownCurso");
-const containerDos= document.getElementById("contenedorCambiante");
+//const cursos = document.getElementById("dropdownCurso");
+//const containerDos= document.getElementById("contenedorCambiante");
 const cohortJson= "../data/cohorts.json";
 
 fetch(cohortJson)
@@ -41,7 +40,7 @@ fetch(cohortJson)
 .then(data => {
     renderCohorts(data);
     cohorts = data;
-    console.log(cohort);
+    console.log(cohorts);
 })
 
 const renderCohorts = data =>{
@@ -53,5 +52,26 @@ const renderCohorts = data =>{
     })
 }
 
+//fetch para progress
+let progress = {};
+const cursos = document.getElementById("dropdownCurso");
+const containerDos= document.getElementById("contenedorCambiante");
+const progressJson= "../data/cohorts/lim-2018-03-pre-core-pw/progress.json";
 
+fetch(progressJson)
+.then(response => response.json())
+.then(data => {
+    renderProgress(data);
+    progress =  data;
+    console.log(progress);
+})
+
+const renderProgress = data =>{
+    cursos.addEventListener("click", () =>{
+        const render = data.forEach(element =>{
+            return containerDos.innerHTML += (`<p>${element.intro}</p>`)
+        })
+        return render;
+    })
+}
 
