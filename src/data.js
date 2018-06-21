@@ -19,7 +19,7 @@ fetch(userJson)
     console.log(users);
 })
 
-/*
+
 const renderUsers = data =>{
     btn.addEventListener("click", () =>{
         const render = data.forEach(element =>{
@@ -28,10 +28,10 @@ const renderUsers = data =>{
         return render;
     })
 }
-*/
-/*
+
+
 //fetch para cohorts
-let cohorts = [];
+let cohorts = [];git 
 const cursos = document.getElementById("dropdownCurso");
 const containerDos= document.getElementById("contenedorCambiante");
 const cohortJson= "../data/cohorts/cohorts.json";
@@ -74,4 +74,4 @@ const renderCohorts = data =>{
         })
         return render;
     })
-}*/
+}
