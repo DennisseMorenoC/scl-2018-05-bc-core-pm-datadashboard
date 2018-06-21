@@ -10,7 +10,7 @@ const btn =  document.getElementById("dropdown2018");
 const container =  document.getElementById("contenedorCambiante");
 const userJson = "../data/cohorts/lim-2018-03-pre-core-pw/users.json";
 
-/*
+
 fetch(userJson)
 .then(response => response.json())
 .then(data => {
@@ -28,7 +28,7 @@ const renderUsers = data =>{
         return render;
     })
 }
-*/
+
 
 //fetch para cohorts
 let cohorts = [];
@@ -39,11 +39,11 @@ const cohortJson= "../data/cohorts.json";
 fetch(cohortJson)
 .then(response => response.json())
 .then(data => {
-    /*renderCohorts(data);*/
+    renderCohorts(data);
     cohorts = data;
-    console.log(cohorts);
+    console.log(cohort);
 })
-/*
+
 const renderCohorts = data =>{
     cursos.addEventListener("click", () =>{
         const render = data.forEach(element =>{
@@ -54,4 +54,4 @@ const renderCohorts = data =>{
 }
 
 
-}*/
+
