@@ -68,26 +68,3 @@ const renderCohorts = data =>{
     })
 }
 
-//fetch para progress
-let progress = {};
-const cursos = document.getElementById("dropdownCurso");
-const containerDos= document.getElementById("contenedorCambiante");
-const progressJson= "../data/cohorts/lim-2018-03-pre-core-pw/progress.json";
-
-fetch(progressJson)
-.then(response => response.json())
-.then(data => {
-    renderProgress(data);
-    progress =  data;
-    console.log(progress);
-})
-
-const renderProgress = data =>{
-    cursos.addEventListener("click", () =>{
-        const render = data.forEach(element =>{
-            return containerDos.innerHTML += (`<p>${element.intro}</p>`)
-        })
-        return render;
-    })
-}
-
