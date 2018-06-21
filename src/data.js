@@ -1,5 +1,3 @@
-//import { promises } from "fs";
-
  window.computeUsersStats = (users, progress, courses) => {
      for (i = 0; i < users.length; ++i){
          let idAlumnas = users.map(function(id){
@@ -32,6 +30,18 @@
       console.log(error);
     }
 );
+
+const users = response [0]
+const progress = response [1]
+const cohorts = response[2]
+
+let result = Object.keys(obj).map(function(key) {
+    return [progress(key), obj[key]];
+  });
+  
+  console.log(result);
+
+
 
 
 
