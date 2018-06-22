@@ -1,5 +1,3 @@
-//import { promises } from "fs";
-
  window.computeUsersStats = (users, progress, courses) => {
      
     for (let i = 0; i < users.length; ++i){
