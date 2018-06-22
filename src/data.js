@@ -15,7 +15,8 @@ Promise.all([
     const courses = responseJsons[2];
     console.log(responseJsons);
     if(users && progress && courses){
-        window.computeUsersStats(responseJsons[0],responseJsons[1],responseJsons[2])
+        window.computeUsersStats(responseJsons[0],responseJsons[1],responseJsons[2]);
+        //holi
     }
 
 
@@ -36,7 +37,7 @@ window.computeUsersStats = (users, progress, courses) => {
     
          //creamos una segunda variable para juntar progreso con alumnas
          //transformar la info de progreso a una informacion que podamos entender
-         if(Json.stringify(progreso)==='{}'){
+         if(JSON.stringify(progreso)==='{}'){
              users[i] = {
                  //... cumple la misma funcion que el push 
                  //en esta parte agregamos la propiedad de stats a users
