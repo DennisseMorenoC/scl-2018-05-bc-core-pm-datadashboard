@@ -17,7 +17,7 @@ Promise.all([
     if(users && progress && courses){
     }
 
-
+//insertar mensaje de error 
 }).catch(
     (error) =>{
         alert("Error al cargar los datos" + error);
