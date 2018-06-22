@@ -9,6 +9,7 @@ Promise.all([
      }));
  }
 ).then((responseJsons)=>{
+    //se crean tres variables constantes para poder guardar los datos de cada fetch y poder utilizarlos en nuestras funciones
     const users = responseJsons[0];
     const progress = responseJsons[1];
     const courses = responseJsons[2];
@@ -17,6 +18,7 @@ Promise.all([
         window.computeUsersStats(responseJsons[0],responseJsons[1],responseJsons[2])
     }
 
+
 }).catch(
     (error) =>{
         alert("Error al cargar los datos" + error);
@@ -24,50 +26,52 @@ Promise.all([
     }
 );
 
- window.computeUsersStats = (users, progress, courses) => {
+window.computeUsersStats = (users, progress, courses) => {
      //creamos for para recorrer users
      for (let i= 0; users.length; ++i){
          //creamos variable users para poder obtener el id de cada alumna
          let idAlumnas = users[i].id;
          let progreso = progress[idAlumnas];
-         console.log (progreso)
-         //creamos una segunda variable para 
-        if(JSON.stringify(progreso) === '{}'){
-            users[i] = {
-                ...users[i],
-                stats:{
-                    percent: 0,
-                    exercises: {
-                        total: 0,
-                        completed: 0,
-                        percent: 0
-                    },
-                    reads: {
-                        total: 0,
-                        completed: 0,
-                        percent: 0
-                    },
-                    quizzes: {
-                        total: 0,
-                        completed: 0,
-                        percent: 0,
-                        scoreSum: 0,
-                        scoreAvg: 0,
-                }
-
-
-            }
-
+         console.log(progreso)
+    
+         //creamos una segunda variable para juntar progreso con alumnas
+         //transformar la info de progreso a una informacion que podamos entender
+         if(Json.stringify(progreso)==='{}'){
+             users[i] = {
+                 //... cumple la misma funcion que el push 
+                 //en esta parte agregamos la propiedad de stats a users
+                 ...users[i],
+                 stats:{
+                     percent: 0,
+                     exercises:{
+                         total:0,
+                         completed:0,
+                         percent:0,
+                     }, 
+                     reads: {
+                         total:0,
+                         completed:0,
+                         percent:0,
+                     },
+                     quizzes:{
+                         total:0,
+                         completed:0,
+                         percent:0,
+                         scoreSum:0,
+                         scoreAvg:0,
+                     }
+                
+                 }
+             }
+         }
 
          }
          
      }
- }
 
+    
    
 // window.sortUsers = (users, orderBy, orderDirection) => {};
 // window.filterUsers = (users, search) => {};
-// window.processCohortData = (options) => {};
+// window.processCohortData = (options) => {};*/
 
-
- 
