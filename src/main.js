@@ -9,29 +9,17 @@ Promise.all([
      }));
  }
 ).then((responseJsons)=>{
-<<<<<<< HEAD
+
     let users = response [0];
     let progress = response [1];
     let cohorts = response [2];
     console.log(responseJsons);
   // computeUsersStats(responseJsons[0],responseJsons[1],responseJsons[2]);
-=======
-    let users =  response [0];
-    let progress = response [1];
-    let cohorts = response [2];
-    console.log(responseJsons);
 
-
->>>>>>> 7d59eb58def8b364fffeadce42d9ae8581689824
 }).catch(
     (error) =>{
         alert("Error al cargar los datos" + error);
       console.log(error);
     }
 );
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 7d59eb58def8b364fffeadce42d9ae8581689824
 
