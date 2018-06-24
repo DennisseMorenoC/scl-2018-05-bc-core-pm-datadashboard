@@ -1,7 +1,8 @@
 Promise.all([
-    fetch ("../data/cohorts/lim-2018-03-pre-core-pw/users.json"),
-    fetch ("../data/cohorts/lim-2018-03-pre-core-pw/progress.json"),
-    fetch ("../data/cohorts.json")
+      fetch ("../data/cohorts/lim-2018-03-pre-core-pw/users.json"),
+      fetch ("../data/cohorts/lim-2018-03-pre-core-pw/progress.json"),
+      fetch ("../data/cohorts.json")
+    
  ]).then(
      (responses) =>{
         return Promise.all(responses.map((response)=>{
@@ -14,11 +15,9 @@ Promise.all([
     const progress = responseJsons[1];
     const courses = responseJsons[2];
     console.log(responseJsons);
-    if(users && progress && courses){
-        window.computeUsersStats(responseJsons[0], responseJsons[1], responseJsons[2]);
-
-    }
-}).catch(
+    let computeUsersStats = window.loadData.computeUsersStats(users, progress, Object.keys(cohorts[0].coursesIndex));
+    })
+    .catch(
     (error) =>{
         alert("Error al cargar los datos" + error);
       console.log(error);
@@ -116,8 +115,13 @@ window.computeUsersStats = (users, progress, courses) => {
      
      
          //creamos variable users para poder obtener el id de cada alumna
+<<<<<<< HEAD
          
          
+=======
+
+ 
+>>>>>>> 46112e71ac2894f0426ec80788db099e2fb7f114
     
          //creamos una segunda variable para juntar progreso con alumnas
          //transformar la info de progreso a una informacion que podamos entender
@@ -150,10 +154,7 @@ window.computeUsersStats = (users, progress, courses) => {
                      }
                 
                  }
-             }
-         }
          
-
          
          
      
@@ -163,5 +164,5 @@ window.computeUsersStats = (users, progress, courses) => {
    
 // window.sortUsers = (users, orderBy, orderDirection) => {};
 // window.filterUsers = (users, search) => {};
-// window.processCohortData = (options) => {};*/
-
+// window.processCohortData = (options) => {};
+     
