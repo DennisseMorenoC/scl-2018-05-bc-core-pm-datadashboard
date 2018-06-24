@@ -17,7 +17,8 @@ Promise.all([
     console.log(responseJsons);
     if(users && progress && courses){
         window.computeUsersStats(responseJsons[0], responseJsons[1], responseJsons[2]);
-)}.catch(
+    }});
+    .catch(
     (error) =>{
         alert("Error al cargar los datos" + error);
       console.log(error);
