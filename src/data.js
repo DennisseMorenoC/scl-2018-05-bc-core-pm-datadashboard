@@ -1,30 +1,35 @@
-Promise.all([
-      fetch ("../data/cohorts/lim-2018-03-pre-core-pw/users.json"),
-      fetch ("../data/cohorts/lim-2018-03-pre-core-pw/progress.json"),
-      fetch ("../data/cohorts.json")
-    
- ]).then(
-     (responses) =>{
-        return Promise.all(responses.map((response)=>{
-         return response.json();
-        }));
-    }
-).then((responseJsons)=>{
-    //se crean tres variables constantes para poder guardar los datos de cada fetch y poder utilizarlos en nuestras funciones
-    const users = responseJsons[0];
-    const progress = responseJsons[1];
-    const courses = responseJsons[2];
-    console.log(responseJsons);
-    let computeUsersStats = window.loadData.computeUsersStats(users, progress, Object.keys(cohorts[0].coursesIndex));
-    })
-    .catch(
-    (error) =>{
-        alert("Error al cargar los datos" + error);
-      console.log(error);
-    }
-);
 
-window.computeUsersStats = (users, progress, courses) => {
+    Promise.all([
+        fetch ("../data/cohorts/lim-2018-03-pre-core-pw/users.json"),
+        fetch ("../data/cohorts/lim-2018-03-pre-core-pw/progress.json"),
+        fetch ("../data/cohorts.json")
+      
+   ]).then(
+       (responses) =>{
+          return Promise.all(responses.map((response)=>{
+           return response.json();
+          }));
+      }
+  ).then((responseJsons)=>{
+      //se crean tres variables constantes para poder guardar los datos de cada fetch y poder utilizarlos en nuestras funciones
+      let users = responseJsons[0];
+      let progress = responseJsons[1];
+      let courses = responseJsons[2];
+      let computeUsersStats= window.loadData.computeUsersStats(users,progress,courses);
+      console.log(responseJsons);
+
+
+      
+      })
+      .catch(
+      (error) =>{
+          alert("Error al cargar los datos" + error);
+      }
+  );
+
+
+
+window.loadData.computeUsersStats=(users, progress, courses) => {
     let progressPercent = 0;    
     let completed = 0;
     let quizzes = 0;
@@ -41,6 +46,7 @@ window.computeUsersStats = (users, progress, courses) => {
     let exercisesTotales = 0;
     let exercisesCompletados = 0;
     let exercisesPercent = 0;
+    let usersNuevos = [];
      //creamos for para recorrer users
     users.forEach(item => {
         let idAlumnas = users[item].id;
@@ -115,13 +121,8 @@ window.computeUsersStats = (users, progress, courses) => {
      
      
          //creamos variable users para poder obtener el id de cada alumna
-<<<<<<< HEAD
          
          
-=======
-
- 
->>>>>>> 46112e71ac2894f0426ec80788db099e2fb7f114
     
          //creamos una segunda variable para juntar progreso con alumnas
          //transformar la info de progreso a una informacion que podamos entender

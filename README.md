@@ -6,3 +6,15 @@ Quisimos hacer este producto lo mas sencillo posible, para que el usuario logre 
 
 Esta aplicación tiene como base, un diseño minimalista y sencillo, amigable con el usuario , y fácil de entender cada dato que nos entrega. Conserva los colores y tipografías de laboratoria, porque creemos que es fundamental seguir la línea de la marca de donde viene el producto. 
  
+Guía de Preguntas a Valentina:
+1.- ¿Cuáles son los datos mas relevantes que te gustaría ver en la interfaz?
+    R: El interfaz estará dentro del LMS y es necesario el acceso a todas las sedes,
+       cursos, alumnas, retos y quizzes.
+2.- ¿Con que frecuencia revisa esos datos?
+    R: Cada vez que necesite consultarlos o tomar una desición.
+3.- ¿Cada cuanto se debe actualizar la información?
+    R: Cada vez que se actualice el LMS.
+4.- ¿Quiere conservar los colores y gráficas institucionales?
+    R: Si, tiene que tener los colores y tipografías institucionales
+5.- ¿Quien más ocupará ésta interfaz?
+    R: Solo ella la ocupará y tendrá acceso a esta dentro de la sede
