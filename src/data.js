@@ -1,5 +1,32 @@
+Promise.all([
+      fetch ("../data/cohorts/lim-2018-03-pre-core-pw/users.json"),
+      fetch ("../data/cohorts/lim-2018-03-pre-core-pw/progress.json"),
+      fetch ("../data/cohorts.json")
+    
+ ]).then(
+     (responses) =>{
+        return Promise.all(responses.map((response)=>{
+         return response.json();
+        }));
+    }
+).then((responseJsons)=>{
+    //se crean tres variables constantes para poder guardar los datos de cada fetch y poder utilizarlos en nuestras funciones
+    const users = responseJsons[0];
+    const progress = responseJsons[1];
+    const courses = responseJsons[2];
+    console.log(responseJsons);
+  
+    let computeUsersStats = window.loadData.computeUsersStats(users, progress, Object.keys(cohorts[0].coursesIndex));
+    })
+    .catch(
 
-    Promise.all([
+    (error) =>{
+        alert("Error al cargar los datos" + error);
+      console.log(error);
+    }
+);
+
+    /*Promise.all([
         fetch ("../data/cohorts/lim-2018-03-pre-core-pw/users.json"),
         fetch ("../data/cohorts/lim-2018-03-pre-core-pw/progress.json"),
         fetch ("../data/cohorts.json")
@@ -25,7 +52,7 @@
       (error) =>{
           alert("Error al cargar los datos" + error);
       }
-  );
+  );*/
 
 
 
