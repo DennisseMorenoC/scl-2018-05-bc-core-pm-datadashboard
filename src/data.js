@@ -16,13 +16,13 @@ Promise.all([
     const courses = responseJsons[2];
     console.log(responseJsons);
   
-    let computeUsersStats = window.loadData.computeUsersStats(users, progress, Object.keys(cohorts[0].coursesIndex));
-    })
-    .catch(
+    if (users && progress && courses){
+        computeUsersStats = window.loadData.computeUsersStats(users, progress, Object.keys(cohorts[0].coursesIndex));
+    }).catch(
 
     (error) =>{
         alert("Error al cargar los datos" + error);
-      console.log(error);
+      
     }
 );
 
@@ -138,7 +138,7 @@ window.loadData.computeUsersStats=(users, progress, courses) => {
         
         
     });
-    return users;
+   // return users;
     
      
 
