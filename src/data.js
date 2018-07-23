@@ -88,7 +88,9 @@ window.computeUsersStats=(users, progress, cohorts) => {
    
         /*users.forEach(item => {
             let idAlumnas = users.id;
+        
             console.log(idAlumnas)
+
             let progreso = progress[idAlumnas];*/
 
             if(role === "student"){
@@ -102,6 +104,7 @@ window.computeUsersStats=(users, progress, cohorts) => {
                         let progressPercent = progreso[j].percent;
                         console.log(progressPercent);
                         let progressUnit = progreso[j].units;
+
                         console.log(progressUnit)
                         for (let k in progressUnit){
                             let progressParts = progressUnit[k].parts;
