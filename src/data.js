@@ -80,10 +80,12 @@ window.computeUsersStats=(users, progress, cohorts) => {
         //creamos for para recorrer users
         users.forEach(item => {
             let idAlumnas = users.id;
+        
             console.log(idAlumnas)
             let progreso = progress[idAlumnas];
 console.log(progreso)
             if (users.role === "student"){
+
                 cohorts.forEach(item2 => {
                     if(progreso[item2] !== "undefined"){
                         progressPercent = progreso[item2].percent;
