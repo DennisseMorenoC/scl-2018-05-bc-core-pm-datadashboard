@@ -19,3 +19,19 @@ Si, es importante conservar la linea de Laboratoria.
 
 
  
+Guía de Preguntas a Valentina:
+- ¿Cuáles son los datos mas relevantes que te gustaría ver en la interfaz?
+-   R: El interfaz estará dentro del LMS y es necesario el acceso a todas las sedes,cursos, alumnas,    -      retos y quizzes.
+- ¿Con que frecuencia revisa esos datos?
+-   R: Cada vez que necesite consultarlos o tomar una desición.
+- ¿Cada cuanto se debe actualizar la información?
+-   R: Cada vez que se actualice el LMS.
+- ¿Quiere conservar los colores y gráficas institucionales?
+-   R: Si, tiene que tener los colores y tipografías institucionales
+- ¿Quien más ocupará ésta interfaz?
+-   R: Solo ella la ocupará y tendrá acceso a esta dentro de la sede
+
+Sketch de Alta fidelidad:
+
+
+
