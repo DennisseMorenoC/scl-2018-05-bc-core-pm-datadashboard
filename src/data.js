@@ -18,7 +18,7 @@ Promise.all([
   
     if (users && progress && courses){
         computeUsersStats = window.loadData.computeUsersStats(users, progress, Object.keys(cohorts[0].coursesIndex));
-    }).catch(
+    }}).catch(
 
     (error) =>{
         alert("Error al cargar los datos" + error);
