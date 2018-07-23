@@ -189,7 +189,9 @@ console.log(progreso)
             
     
    
-// window.sortUsers = (users, orderBy, orderDirection) => {};
+window.sortUsers = (users, orderBy, orderDirection) => {
+    users.name 
+};
 // window.filterUsers = (users, search) => {};
 // window.processCohortData = (options) => {};
      
