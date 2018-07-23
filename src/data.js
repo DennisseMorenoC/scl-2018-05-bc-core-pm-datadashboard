@@ -17,6 +17,7 @@ Promise.all([
     console.log(responseJsons);
   
     let computeUsersStats = window.loadData.computeUsersStats(users, progress, Object.keys(cohorts[1].coursesIndex));
+    console.log(computeUsersStats);
 }).catch(
 
     (error) =>{
@@ -78,6 +79,7 @@ window.loadData = {
         users.forEach(item => {
             let idAlumnas = users[item].id;
             let progreso = progress[idAlumnas];
+           
 
             if (users.role === "student"){
                 courses.forEach(item2 => {
@@ -139,6 +141,7 @@ window.loadData = {
         
         });
         return users;
+        console.log(users);
     },
      
 
@@ -182,7 +185,9 @@ window.loadData = {
 }
     
    
-// window.sortUsers = (users, orderBy, orderDirection) => {};
+window.sortUsers = (users, orderBy, orderDirection) => {
+    users.name 
+};
 // window.filterUsers = (users, search) => {};
 // window.processCohortData = (options) => {};
      

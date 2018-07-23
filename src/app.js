@@ -13,7 +13,7 @@ function cargar(cohort){
         fetch("../data/cohorts/"+ cohort + "progress.json"),
         fetch("../data/cohorts.json")
     ]).then(//al cumplirse las promesas ejecutara lo siguiente
-        (datos.Json)=>{
+        (datos.Json) =>{
             return Promise.all(datos.Json.map((respuesta) =>{//crea un nuevo array con objetos json
                 return respuesta.json()
             }))
