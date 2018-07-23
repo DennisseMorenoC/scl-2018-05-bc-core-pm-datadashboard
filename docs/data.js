@@ -1,3 +1,5 @@
+let computeUsersStats;
+console.log(computeUsersStats)
 Promise.all([
       fetch ("../data/cohorts/lim-2018-03-pre-core-pw/users.json"),
       fetch ("../data/cohorts/lim-2018-03-pre-core-pw/progress.json"),
@@ -13,9 +15,9 @@ Promise.all([
     //se crean tres variables constantes para poder guardar los datos de cada fetch y poder utilizarlos en nuestras funciones
     const users = responseJsons[0];
     const progress = responseJsons[1];
-    const courses = responseJsons[2];
+    const cohorts = responseJsons[2];
     console.log(responseJsons);
-    let computeUsersStats = window.loadData.computeUsersStats(users, progress, Object.keys(cohorts[0].coursesIndex));
+    computeUsersStats = window.computeUsersStats(users, progress, Object.keys(cohorts[0].coursesIndex));
     })
     .catch(
     (error) =>{
@@ -115,13 +117,8 @@ window.computeUsersStats = (users, progress, courses) => {
      
      
          //creamos variable users para poder obtener el id de cada alumna
-<<<<<<< HEAD
-         
-         
-=======
 
  
->>>>>>> 46112e71ac2894f0426ec80788db099e2fb7f114
     
          //creamos una segunda variable para juntar progreso con alumnas
          //transformar la info de progreso a una informacion que podamos entender

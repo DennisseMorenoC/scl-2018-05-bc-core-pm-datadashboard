@@ -1,3 +1,7 @@
+let computeUsersStats;
+let users;
+let progress;
+let cohorts;
 Promise.all([
       fetch ("../data/cohorts/lim-2018-03-pre-core-pw/users.json"),
       fetch ("../data/cohorts/lim-2018-03-pre-core-pw/progress.json"),
@@ -11,16 +15,16 @@ Promise.all([
     }
 ).then((responseJsons)=>{
     //se crean tres variables constantes para poder guardar los datos de cada fetch y poder utilizarlos en nuestras funciones
-    const users = responseJsons[0];
-    const progress = responseJsons[1];
-    const courses = responseJsons[2];
+    users = responseJsons[0];
+    progress = responseJsons[1];
+    cohorts = responseJsons[2];
     console.log(responseJsons);
-  
-    let computeUsersStats = window.loadData.computeUsersStats(users, progress, Object.keys(cohorts[1].coursesIndex));
+    window.computeUsersStats(users, progress,cohorts);
+//window.computeUsersStats(users, progress, Object.keys(cohorts[1].coursesIndex));
 }).catch(
 
     (error) =>{
-        alert("Error al cargar los datos" + error);
+       console.log("Error al cargar los datos" + error);
       
     }
 );
@@ -55,8 +59,7 @@ Promise.all([
 
 
 
-window.loadData = {
-    computeUsersStats: (users, progress, courses) => {
+window.computeUsersStats=(users, progress, cohorts) => {
         let progressPercent = 0;    
         let completed = 0;
         let quizzes = 0;
@@ -76,15 +79,17 @@ window.loadData = {
         let usersNuevos = [];
         //creamos for para recorrer users
         users.forEach(item => {
-            let idAlumnas = users[item].id;
+            let idAlumnas = users.id;
+            console.log(idAlumnas)
             let progreso = progress[idAlumnas];
-
+console.log(progreso)
             if (users.role === "student"){
-                courses.forEach(item2 => {
+                cohorts.forEach(item2 => {
                     if(progreso[item2] !== "undefined"){
                         progressPercent = progreso[item2].percent;
                         let progressUnit = Object.values(progreso[item2].units)
                     
+                        console.log(progressUnit)
                         for (let item3 in progressUnit){
                             let progressParts = Object.values(progressUnit[item3].parts);
                         
@@ -139,7 +144,7 @@ window.loadData = {
         
         });
         return users;
-    },
+    }
      
 
     
@@ -179,7 +184,7 @@ window.loadData = {
                  //... cumple la misma funcion que el push 
                  //en esta parte agregamos la propiedad de stats a users
                 
-}
+            
     
    
 // window.sortUsers = (users, orderBy, orderDirection) => {};
