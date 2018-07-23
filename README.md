@@ -5,6 +5,19 @@ El datadashboard esta creado para almacenar los datos del progreso de cada alumn
 Quisimos hacer este producto lo mas sencillo posible, para que el usuario logre visualizar lo que le interesa lo mas rápido y claro. Posee unas ciertas propiedades de filtrado como, el nombre de las alumnas y el orden en que quiere ver los progresos de el curso, para que el usuario pueda elegir que es lo que necesita ver al instante. Además funciona tanto para aparatos móviles como para computadores.
 
 Esta aplicación tiene como base, un diseño minimalista y sencillo, amigable con el usuario , y fácil de entender cada dato que nos entrega. Conserva los colores y tipografías de laboratoria, porque creemos que es fundamental seguir la línea de la marca de donde viene el producto. 
+
+Entrevista:
+¿Cuales son los puntos mas relevantes que te gustaria ver en la interfaz?
+Las sedes, cursos, retos, quizzes, lecturas, retos.
+¿Cuando se actualizarian estos datos?
+Cada vez que se actualiza el LMS.
+¿Quienes tendrian acceso a esta información?
+Solo los training manager de cada sede.
+¿Desea conservar los colores instituacionales?
+Si, es importante conservar la linea de Laboratoria.
+
+
+
  
 Guía de Preguntas a Valentina:
 - ¿Cuáles son los datos mas relevantes que te gustaría ver en la interfaz?

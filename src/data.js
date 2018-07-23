@@ -21,7 +21,7 @@ Promise.all([
 
     (error) =>{
         alert("Error al cargar los datos" + error);
-      console.log(error);
+      
     }
 );
 
