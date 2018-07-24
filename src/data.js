@@ -184,26 +184,9 @@ window.computeUsersStats=(users, progress, cohorts) => {
             }        
     }
 
-};
-
-    
-    //console.log(users);
-    
-    
-    
-
-       
-    
-     
-
-    
-
-
-     
-     
-         //creamos variable users para poder obtener el id de cada alumna
-         
-         
+};    
+    //console.log(users);     
+         //creamos variable users para poder obtener el id de cada alumna  
     
          //creamos una segunda variable para juntar progreso con alumnas
          //transformar la info de progreso a una informacion que podamos entender
@@ -235,7 +218,8 @@ window.computeUsersStats=(users, progress, cohorts) => {
                 
             
     
-
-// window.filterUsers = (users, search) => {};
+window.filterUsers = (users, search) => {
+    users.filter((user) => user.includes(search));
+};
 // window.processCohortData = (options) => {};
      
