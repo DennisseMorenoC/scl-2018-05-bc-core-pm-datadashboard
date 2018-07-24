@@ -9,8 +9,8 @@ if(ordenDirection == 'ASC'){ // en esta linea creo una condicion y le digo que m
 }else{
     return x.name.localeCompare(y.name)* -1; // en esta linea comparo nuevamente x.name e y.name pero lo hago para que se ordenen descendente, eso sucede al compararlo por -1, hace que el valor que estoy multiplicando por -1 me lo devuelva negativo y lo ordene descendente
 }
+
 }
-);}}
-
-if(ordenDirection === 'percent')
-
+);}
+if(ordenDirection === 'percent');
+}
