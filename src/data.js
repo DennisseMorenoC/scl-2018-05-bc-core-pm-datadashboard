@@ -93,8 +93,8 @@ window.computeUsersStats=(users, progress, cohorts) => {
 
             if(role === "student"){
                 console.log(role);
-                for (let j in progreso){
-                   
+                
+                for (let j in progreso){  
                 
                 //cohorts.forEach(item2 => {
                     //if(progreso[j] !== "undefined"){
@@ -110,6 +110,7 @@ window.computeUsersStats=(users, progress, cohorts) => {
                                 switch(progressParts[l].type){
                                     case "read":
                                         readsTotales += 1;
+                                        console.log(readsTotales);
                                         if(progressParts[l].completed == 1){
                                             readsCompletados += 1;
                                         }break;
@@ -128,31 +129,32 @@ window.computeUsersStats=(users, progress, cohorts) => {
                             }
                         }
                         // let stats = new Object();
-                        nuevoUsuario=users.map(user => {
-                        user.stats={
-                        percent :progressPercent,
-                        reads :{
-                            total: readsTotales,
-                            completed: readsCompletados,
-                            percent: Math.round((readsCompletados / readsTotales) * 100)
-                        },
-                        quiz :{
-                            total: quizzesTotales,
-                            completed: quizzessCompletados,
-                            percent: Math.round((quizzessCompletados / quizzesTotales) * 100),
-                            scoreSum: scoreSum,
-                            scoreAvg: Math.round(scoreSum /quizzessCompletados)
-                        },
-                        exercises :{
-                            total: exercisesTotales,
-                            completed: exercisesCompletados,
-                            percent: Math.round((exercisesCompletados / exercisesTotales) * 100)
-                        }
+                        console.log(users[i]);
+                        users[i].stats = {
+                            percent: progressPercent,
+                            reads: {
+                                total: readsTotales,
+                                completed: readsCompletados,
+                                percent: Math.round((readsCompletados / readsTotales) * 100)
+                            },
+                            quiz: {
+                                total: quizzesTotales,
+                                completed: quizzessCompletados,
+                                percent: Math.round((quizzessCompletados / quizzesTotales) * 100),
+                                scoreSum: scoreSum,
+                                scoreAvg: Math.round(scoreSum /quizzessCompletados)
+                            },
+                            exercises: {
+                                total: exercisesTotales,
+                                completed: exercisesCompletados,
+                                percent: Math.round((exercisesCompletados / exercisesTotales) * 100)
                             }
-
-                            return user
-                            console.log(users)
-                        })
+                        
+                        };
+                        console.log(users[i].stats);
+                        console.log(users);
+                        return users;
+                        
                         // stats.percent = progressPercent;
                         // stats.reads ={
                         //     total: readsTotales,
@@ -178,10 +180,10 @@ window.computeUsersStats=(users, progress, cohorts) => {
                 }
             }        
     }
-    return users;
-    console.log(users);
+
 };
-       
+
+    
     //console.log(users);
     
     
@@ -230,10 +232,7 @@ window.computeUsersStats=(users, progress, cohorts) => {
                 
             
     
-   
-window.sortUsers = (users, orderBy, orderDirection) => {
-    users.name 
-};
+
 // window.filterUsers = (users, search) => {};
 // window.processCohortData = (options) => {};
      
