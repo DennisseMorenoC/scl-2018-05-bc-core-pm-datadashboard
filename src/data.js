@@ -18,14 +18,13 @@ Promise.all([
     users = responseJsons[0];
     progress = responseJsons[1];
     cohorts = responseJsons[2];
-    console.log(responseJsons);
+    //console.log(responseJsons);
     window.computeUsersStats(users, progress,cohorts);
-    window.sortUsers(users, ordenBy, ordenDirection);
 //window.computeUsersStats(users, progress, Object.keys(cohorts[1].coursesIndex));
 }).catch(
 
     (error) =>{
-       console.log("Error al cargar los datos" + error);
+       //console.log("Error al cargar los datos" + error);
       
     }
 );
@@ -82,9 +81,9 @@ window.computeUsersStats=(users, progress, cohorts) => {
     for(let i=0; i < users.length; i++){
         let idAlumnas = users[i].id;
 
-        console.log(idAlumnas)
+       // console.log(idAlumnas)
         let progreso = progress[idAlumnas];
-        console.log(progreso)
+       // console.log(progreso)
         let role = users[i].role;
    
         /*users.forEach(item => {
@@ -94,24 +93,25 @@ window.computeUsersStats=(users, progress, cohorts) => {
             let progreso = progress[idAlumnas];*/
 
             if(role === "student"){
-                console.log(role);
-                for (let j in progreso){
-                   
+               // console.log(role);
+                
+                for (let j in progreso){  
                 
                 //cohorts.forEach(item2 => {
                     //if(progreso[j] !== "undefined"){
                         //console.log(progreso[j]);
                         let progressPercent = progreso[j].percent;
-                        console.log(progressPercent);
+                     //   console.log(progressPercent);
                         let progressUnit = progreso[j].units;
-                        console.log(progressUnit)
+                       // console.log(progressUnit)
                         for (let k in progressUnit){
                             let progressParts = progressUnit[k].parts;
-                            console.log(progressParts);
+                           // console.log(progressParts);
                             for (let l in progressParts){
                                 switch(progressParts[l].type){
                                     case "read":
                                         readsTotales += 1;
+                                       // console.log(readsTotales);
                                         if(progressParts[l].completed == 1){
                                             readsCompletados += 1;
                                         }break;
@@ -130,31 +130,32 @@ window.computeUsersStats=(users, progress, cohorts) => {
                             }
                         }
                         // let stats = new Object();
-                        nuevoUsuario=users.map(user => {
-                        user.stats={
-                        percent :progressPercent,
-                        reads :{
-                            total: readsTotales,
-                            completed: readsCompletados,
-                            percent: Math.round((readsCompletados / readsTotales) * 100)
-                        },
-                        quiz :{
-                            total: quizzesTotales,
-                            completed: quizzessCompletados,
-                            percent: Math.round((quizzessCompletados / quizzesTotales) * 100),
-                            scoreSum: scoreSum,
-                            scoreAvg: Math.round(scoreSum /quizzessCompletados)
-                        },
-                        exercises :{
-                            total: exercisesTotales,
-                            completed: exercisesCompletados,
-                            percent: Math.round((exercisesCompletados / exercisesTotales) * 100)
-                        }
+                       // console.log(users[i]);
+                        users[i].stats = {
+                            percent: progressPercent,
+                            reads: {
+                                total: readsTotales,
+                                completed: readsCompletados,
+                                percent: Math.round((readsCompletados / readsTotales) * 100)
+                            },
+                            quiz: {
+                                total: quizzesTotales,
+                                completed: quizzessCompletados,
+                                percent: Math.round((quizzessCompletados / quizzesTotales) * 100),
+                                scoreSum: scoreSum,
+                                scoreAvg: Math.round(scoreSum /quizzessCompletados)
+                            },
+                            exercises: {
+                                total: exercisesTotales,
+                                completed: exercisesCompletados,
+                                percent: Math.round((exercisesCompletados / exercisesTotales) * 100)
                             }
-
-                            return user
-                            
-                        })
+                        
+                        };
+                       // console.log(users[i].stats);
+                       // console.log(users);
+                        return users;
+                        
                         // stats.percent = progressPercent;
                         // stats.reads ={
                         //     total: readsTotales,
@@ -180,10 +181,9 @@ window.computeUsersStats=(users, progress, cohorts) => {
                 }
             }        
     }
-    return users;
-    
 };
-       
+
+    
     //console.log(users);
     
     
@@ -232,14 +232,10 @@ window.computeUsersStats=(users, progress, cohorts) => {
                 
             
     
-   
-/*window.sortUsers = (users, orderBy, orderDirection) => {
-    users.name 
-};
 // window.filterUsers = (users, search) => {};
 // window.processCohortData = (options) => {};*/
-     
-window.sortUsers = (users, ordenBy='name', ordenDirection='ASC') => {;
+ /*    
+window.sortUsers = (users, ordenBy, ordenDirection) => {;
     // creo una funcion que tiene el nombre sortUsers, los parametros de esta funcion son:
     //users = corresponde a un arreglo de las alumnas
     //ordeBy= es un string 
@@ -250,10 +246,30 @@ window.sortUsers = (users, ordenBy='name', ordenDirection='ASC') => {;
     }else{
         return x.name.localeCompare(y.name)* -1; // en esta linea comparo nuevamente x.name e y.name pero lo hago para que se ordenen descendente, eso sucede al compararlo por -1, hace que el valor que estoy multiplicando por -1 me lo devuelva negativo y lo ordene descendente
     }
-  
+    
     }
-    )}
-    console.log(users.name)
-}
+    );}
+    if(ordenDirection === 'percent'){ //ordeno que trabaje en la propiedad percent
+        return users.sort(function(x,y){//y que me ordene users segun la funcion 
+            if(ordenDirection == 'ASC'){
+            return a.stats.percent - b.stats.percent; //comparo mis dos percent
+        }else{
+            return a.stats.percent - b.stast.percent *-1//esta comparacion es para que me los de en orden descendente
+        }
+    });
+    console.log(percent)
+    }}*/
 
+   function sortUsers(users, orderBy, orderDirection){
+        if(orderBy === 'name'){
+        users.sort(function(estudiante1, estudiante2){
+            if(orderDirection == 'ASC'){
+               return estudiante1.name.localeCompare(estudiante2.name);
+            } else { 
+                return (estudiante1.name.localeCompare(estudiante2.name) * -1);
+            }
+         })
+        }
+        return sortUsers;
+    }
     
