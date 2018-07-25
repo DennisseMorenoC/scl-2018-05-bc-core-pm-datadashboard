@@ -80,10 +80,8 @@ window.computeUsersStats=(users, progress, cohorts) => {
     //creamos for para recorrer users
     for(let i=0; i < users.length; i++){
         let idAlumnas = users[i].id;
-
-        console.log(idAlumnas)
         let progreso = progress[idAlumnas];
-        console.log(progreso)
+
         let role = users[i].role;
    
         /*users.forEach(item => {
@@ -94,7 +92,7 @@ window.computeUsersStats=(users, progress, cohorts) => {
             let progreso = progress[idAlumnas];*/
 
             if(role === "student"){
-                console.log(role);
+
                 
                 for (let j in progreso){  
                 
@@ -102,13 +100,13 @@ window.computeUsersStats=(users, progress, cohorts) => {
                     //if(progreso[j] !== "undefined"){
                         //console.log(progreso[j]);
                         let progressPercent = progreso[j].percent;
-                        console.log(progressPercent);
+
                         let progressUnit = progreso[j].units;
 
-                        console.log(progressUnit)
+
                         for (let k in progressUnit){
                             let progressParts = progressUnit[k].parts;
-                            console.log(progressParts);
+
                             for (let l in progressParts){
                                 switch(progressParts[l].type){
                                     case "read":
@@ -223,3 +221,32 @@ window.filterUsers = (users, search) => {
 };
 // window.processCohortData = (options) => {};
      
+function showData(){
+
+    contenedorCambiante.innerHTML += `
+    
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Completitud General</th>
+                        <th scope="col">Completitud Lecturas</th>
+                        <th scope="col">Completitud Ejercicios</th>
+                        <th scope="col">Completitud Quizzes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">${users.name}</th>
+                        <td>${progress.progressPercent}</td>
+                        <td>${progress.readsTotales}</td>
+                        <td>${progress.exercisesTotales}</td>
+                        <td>${progress.quizzesTotales}</td>
+                    </tr>
+                </tbody>
+            </table>
+  
+    `
+;
+    
+}
