@@ -9,8 +9,16 @@ if(ordenDirection == 'ASC'){ // en esta linea creo una condicion y le digo que m
 }else{
     return x.name.localeCompare(y.name)* -1; // en esta linea comparo nuevamente x.name e y.name pero lo hago para que se ordenen descendente, eso sucede al compararlo por -1, hace que el valor que estoy multiplicando por -1 me lo devuelva negativo y lo ordene descendente
 }
+
 }
-);}}
+);}
+if(ordenDirection === 'percent'){ //ordeno que trabaje en la propiedad percent
+    return users.sort(function(x,y){//y que me ordene users segun la funcion 
+        if(ordenDirection == 'ASC'){
+        return a.stats.percent.localeCompare(b.stats.percent); //comparo mis dos percent
+    }else{
+        return a.stats.percent.localeCompare(b.stast.percent) *-1//esta comparacion es para que me los de en orden descendente
+    }
+});
 
-if(ordenDirection === 'percent')
-
+}}

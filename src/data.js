@@ -18,13 +18,13 @@ Promise.all([
     users = responseJsons[0];
     progress = responseJsons[1];
     cohorts = responseJsons[2];
-    console.log(responseJsons);
+    //console.log(responseJsons);
     window.computeUsersStats(users, progress,cohorts);
 //window.computeUsersStats(users, progress, Object.keys(cohorts[1].coursesIndex));
 }).catch(
 
     (error) =>{
-       console.log("Error al cargar los datos" + error);
+       //console.log("Error al cargar los datos" + error);
       
     }
 );
@@ -88,11 +88,9 @@ window.computeUsersStats=(users, progress, cohorts) => {
             let idAlumnas = users.id;
         
             console.log(idAlumnas)
-
             let progreso = progress[idAlumnas];*/
 
             if(role === "student"){
-
                 
                 for (let j in progreso){  
                 
@@ -111,7 +109,7 @@ window.computeUsersStats=(users, progress, cohorts) => {
                                 switch(progressParts[l].type){
                                     case "read":
                                         readsTotales += 1;
-                                        console.log(readsTotales);
+                                       // console.log(readsTotales);
                                         if(progressParts[l].completed == 1){
                                             readsCompletados += 1;
                                         }break;
@@ -130,7 +128,7 @@ window.computeUsersStats=(users, progress, cohorts) => {
                             }
                         }
                         // let stats = new Object();
-                        console.log(users[i]);
+                       // console.log(users[i]);
                         users[i].stats = {
                             percent: progressPercent,
                             reads: {
@@ -152,8 +150,8 @@ window.computeUsersStats=(users, progress, cohorts) => {
                             }
                         
                         };
-                        console.log(users[i].stats);
-                        console.log(users);
+                       // console.log(users[i].stats);
+                       // console.log(users);
                         return users;
                         
                         // stats.percent = progressPercent;
@@ -182,9 +180,11 @@ window.computeUsersStats=(users, progress, cohorts) => {
             }        
     }
 
+
 };    
     //console.log(users);     
          //creamos variable users para poder obtener el id de cada alumna  
+
     
          //creamos una segunda variable para juntar progreso con alumnas
          //transformar la info de progreso a una informacion que podamos entender
@@ -215,6 +215,48 @@ window.computeUsersStats=(users, progress, cohorts) => {
                  //en esta parte agregamos la propiedad de stats a users
                 
             
+
+    
+// window.filterUsers = (users, search) => {};
+// window.processCohortData = (options) => {};*/
+ /*    
+window.sortUsers = (users, ordenBy, ordenDirection) => {;
+    // creo una funcion que tiene el nombre sortUsers, los parametros de esta funcion son:
+    //users = corresponde a un arreglo de las alumnas
+    //ordeBy= es un string 
+    if(ordenBy === 'name'){ // digo que mi parametro ordenBy debe ser si o si name 
+    return users.sort(function(x,y){ // esta linea me ordena users segun la funcion que le estoy dando
+    if(ordenDirection == 'ASC'){ // en esta linea creo una condicion y le digo que mi parametro ordenDirection debe ser igual a el string ASC
+     return x.name.localeCompare(y.name);// En esta linea le digo que me compare los datos x.name con y.name 
+    }else{
+        return x.name.localeCompare(y.name)* -1; // en esta linea comparo nuevamente x.name e y.name pero lo hago para que se ordenen descendente, eso sucede al compararlo por -1, hace que el valor que estoy multiplicando por -1 me lo devuelva negativo y lo ordene descendente
+    }
+    
+    }
+    );}
+    if(ordenDirection === 'percent'){ //ordeno que trabaje en la propiedad percent
+        return users.sort(function(x,y){//y que me ordene users segun la funcion 
+            if(ordenDirection == 'ASC'){
+            return a.stats.percent - b.stats.percent; //comparo mis dos percent
+        }else{
+            return a.stats.percent - b.stast.percent *-1//esta comparacion es para que me los de en orden descendente
+        }
+    });
+    console.log(percent)
+    }}*/
+
+   function sortUsers(users, orderBy, orderDirection){
+        if(orderBy === 'name'){
+        users.sort(function(estudiante1, estudiante2){
+            if(orderDirection == 'ASC'){
+               return estudiante1.name.localeCompare(estudiante2.name);
+            } else { 
+                return (estudiante1.name.localeCompare(estudiante2.name) * -1);
+            }
+         })
+        }
+        return sortUsers;
+    };
     
 window.filterUsers = (users, search) => {
     users.filter((user) => user.includes(search));
